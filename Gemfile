@@ -59,6 +59,8 @@ group :development do
   gem 'sextant'
   # Using Pry Rails
   gem 'pry-rails'
+  # Usng License Finder
+  gem 'license_finder'
 end
 
 group :test do
