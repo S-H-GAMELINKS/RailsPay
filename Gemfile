@@ -55,6 +55,8 @@ group :development do
   gem "better_errors"
   # Using Binding of Caller
   gem "binding_of_caller"
+  # Using Sextant
+  gem 'sextant'
 end
 
 group :test do
