@@ -49,6 +49,8 @@ group :development do
   gem 'brakeman'
   # Using Bundle Audit
   gem 'bundler-audit'
+  # Using Bullet
+  gem 'bullet'
 end
 
 group :test do
