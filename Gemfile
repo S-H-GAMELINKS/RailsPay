@@ -47,6 +47,8 @@ group :development do
   gem 'web-console', '>= 3.3.0'
   # Using Brakeman
   gem 'brakeman'
+  # Using Bundle Audit
+  gem 'bundler-audit'
 end
 
 group :test do
