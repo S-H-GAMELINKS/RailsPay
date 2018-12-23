@@ -37,6 +37,9 @@ gem 'jbuilder', '~> 2.5'
 # Using Pay.jp for Ruby
 gem 'payjp'
 
+# Using Dotenv Rails
+gem 'dotenv-rails'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
