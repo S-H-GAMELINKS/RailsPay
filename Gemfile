@@ -51,6 +51,8 @@ group :development do
   gem 'bundler-audit'
   # Using Bullet
   gem 'bullet'
+  # Using Better Errors
+  gem "better_errors"
 end
 
 group :test do
