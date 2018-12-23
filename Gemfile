@@ -51,6 +51,10 @@ group :development do
   gem 'bundler-audit'
   # Using Bullet
   gem 'bullet'
+  # Using Better Errors
+  gem "better_errors"
+  # Using Binding of Caller
+  gem "binding_of_caller"
 end
 
 group :test do
