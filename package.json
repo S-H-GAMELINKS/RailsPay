@@ -17,7 +17,17 @@
     "moduleDirectories": [
       "node_modules",
       "app/javascript/packs"
-    ]
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "vue"
+    ],
+    "transform": {
+      "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
+      ".*\\.(vue)$": "<rootDir>/node_modules/vue-jest"
+    },
+    "mapCoverage": true
   },
   "devDependencies": {
     "babel-jest": "^23.6.0",
