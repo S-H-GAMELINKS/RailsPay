@@ -7,7 +7,34 @@
     "vue-loader": "14.2.2",
     "vue-template-compiler": "^2.5.21"
   },
+  "scripts": {
+    "test": "jest"
+  },
+  "jest": {
+    "root": [
+      "test/javascript"
+    ],
+    "moduleDirectories": [
+      "node_modules",
+      "app/javascript/packs"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "vue"
+    ],
+    "transform": {
+      "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
+      ".*\\.(vue)$": "<rootDir>/node_modules/vue-jest"
+    },
+    "mapCoverage": true
+  },
   "devDependencies": {
+    "@vue/test-utils": "^1.0.0-beta.27",
+    "babel-jest": "^23.6.0",
+    "babel-preset-es2015": "^6.24.1",
+    "jest": "^23.6.0",
+    "vue-jest": "^3.0.2",
     "webpack-dev-server": "2.11.2"
   }
 }
