@@ -57,6 +57,8 @@ group :development do
   gem "binding_of_caller"
   # Using Sextant
   gem 'sextant'
+  # Using Pry Rails
+  gem 'pry-rails'
 end
 
 group :test do
