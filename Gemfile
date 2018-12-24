@@ -40,8 +40,11 @@ gem 'payjp'
 # Using Dotenv Rails
 gem 'dotenv-rails'
 
- # Using Foreman
- gem 'foreman'
+# Using Slim
+gem "slim-rails"
+
+# Using Foreman
+gem 'foreman'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
