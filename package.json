@@ -14,7 +14,7 @@
     "test": "jest"
   },
   "jest": {
-    "root": [
+    "roots": [
       "test/javascript"
     ],
     "moduleDirectories": [
