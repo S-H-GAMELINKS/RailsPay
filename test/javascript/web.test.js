@@ -1,6 +1,6 @@
 import { shallowMount } from "@vue/test-utils";
 import Index from 'components/web/Index';
-import Index from 'components/web/About';
+import About from 'components/web/About';
 
 describe('Test Web', () => {
     it('should render Web/Index', () => {
