@@ -43,6 +43,9 @@ gem 'dotenv-rails'
 # Using Slim
 gem "slim-rails"
 
+# Using Devise
+gem 'devise'
+
 # Using Foreman
 gem 'foreman'
 
