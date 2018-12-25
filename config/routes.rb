@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get "/sign_in", to: "web#index"
 
   get "/users/mypages", to: "web#index"
+  get "/users/mypages/edit", to: "web#index"
   get "/users/:id", to: "web#index"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
