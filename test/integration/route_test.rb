@@ -30,4 +30,9 @@ class RoutesTest < ActionDispatch::IntegrationTest
       get "/users/1"
       assert_response :success
     end
+    
+    test "should get /users/mypages" do
+      get "/users/mypages"
+      assert_response :success
+    end
 end

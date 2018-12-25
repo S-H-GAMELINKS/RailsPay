@@ -2,6 +2,7 @@ import { shallowMount } from "@vue/test-utils";
 import SignUp from 'components/user/SignUp';
 import SignIn from 'components/user/SignIn';
 import UsersShow from 'components/user/Show';
+import MyPages from 'components/user/MyPages';
 
 describe('Users pages', () => {
     it('should render User SignUp', () => {
@@ -24,6 +25,26 @@ describe('Users pages', () => {
             mocks: {
               $route
             }
+        });
+        expect(wrapper).not.toBeNull();
+    });
+
+    it('should render User mypages', () => {
+
+        const $store = {
+            state: {
+                user: {
+                    name: "S.H.",
+                    email: "hogehoge@test.com",
+                    about: "test"
+                }
+            }
+        };
+
+        const wrapper = shallowMount(MyPages, {
+            mocks: {
+                $store
+              }
         });
         expect(wrapper).not.toBeNull();
     });
