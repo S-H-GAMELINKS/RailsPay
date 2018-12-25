@@ -25,4 +25,9 @@ class RoutesTest < ActionDispatch::IntegrationTest
       get "/sign_in"
       assert_response :success
     end
+
+    test "should get /users/:id" do
+      get "/users/1"
+      assert_response :success
+    end
 end
