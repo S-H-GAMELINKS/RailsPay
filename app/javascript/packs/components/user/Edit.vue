@@ -14,6 +14,7 @@
                 <vue-editor class="form-control" v-model="user.about" :editorOptions="editorSettings"></vue-editor>
             </div>
         </form>
+        <check-out></check-out>
         <p>
             <button type="button" class="btn btn-primary" v-on:click="userInfoUpdate">Update</button>
         </p>
@@ -30,6 +31,8 @@ import { ImageResize } from "quill-image-resize-module";
 Quill.register("modules/imageDrop", ImageDrop);
 Quill.register("modules/imageResize", ImageResize);
 
+import CheckOut from './CheckOut.vue';
+
 export default {
     data: function() {
         return {
@@ -43,7 +46,8 @@ export default {
         }
     },
     components: {
-        VueEditor
+        VueEditor,
+        CheckOut
     },
     methods: {
         userInfoUpdate: function() {

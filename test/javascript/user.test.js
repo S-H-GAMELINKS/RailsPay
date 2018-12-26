@@ -4,6 +4,8 @@ import SignIn from 'components/user/SignIn';
 import UsersShow from 'components/user/Show';
 import MyPages from 'components/user/MyPages';
 import Edit from 'components/user/Edit';
+import CheckOut from 'components/user/CheckOut';
+import Store from 'store/store';
 
 describe('Users pages', () => {
     it('should render User SignUp', () => {
@@ -32,15 +34,7 @@ describe('Users pages', () => {
 
     it('should render User mypages', () => {
 
-        const $store = {
-            state: {
-                user: {
-                    name: "S.H.",
-                    email: "hogehoge@test.com",
-                    about: "test"
-                }
-            }
-        };
+        const $store = Store;
 
         const wrapper = shallowMount(MyPages, {
             mocks: {
@@ -52,15 +46,7 @@ describe('Users pages', () => {
 
     it('should render User Edit', () => {
 
-        const $store = {
-            state: {
-                user: {
-                    name: "S.H.",
-                    email: "hogehoge@test.com",
-                    about: "test"
-                }
-            }
-        };
+        const $store = Store;
 
         const wrapper = shallowMount(Edit, {
             mocks: {
