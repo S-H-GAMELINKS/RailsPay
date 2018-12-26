@@ -10,7 +10,8 @@ class Api::UsersController < ApplicationController
     end
 
     def set_token
-        render json: current_user.update(token_params)
+        response = current_user.update(token_params)
+        render json: response 
     end
 
     def update
