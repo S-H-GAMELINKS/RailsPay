@@ -46,15 +46,7 @@ describe('Users pages', () => {
 
     it('should render User Edit', () => {
 
-        const $store = {
-            state: {
-                user: {
-                    name: "S.H.",
-                    email: "hogehoge@test.com",
-                    about: "test"
-                }
-            }
-        };
+        const $store = Store;
 
         const wrapper = shallowMount(Edit, {
             mocks: {
