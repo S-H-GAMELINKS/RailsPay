@@ -11,6 +11,7 @@ class Api::UsersController < ApplicationController
 
     def set_token
         response = current_user.update(token_params)
+        current_user.create_customer_id(current_user.token)
         render json: response 
     end
 
