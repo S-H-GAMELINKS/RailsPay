@@ -4,6 +4,7 @@ import SignIn from 'components/user/SignIn';
 import UsersShow from 'components/user/Show';
 import MyPages from 'components/user/MyPages';
 import Edit from 'components/user/Edit';
+import CheckOut from 'components/user/CheckOut';
 
 describe('Users pages', () => {
     it('should render User SignUp', () => {
@@ -69,4 +70,9 @@ describe('Users pages', () => {
         });
         expect(wrapper).not.toBeNull();
     });
+
+    it('should render User CheckOut', () => {
+        const wrapper = shallowMount(CheckOut);
+        expect(wrapper).not.toBeNull();
+    })
 });
