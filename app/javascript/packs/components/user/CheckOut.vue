@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <payjp-checkout
-            :api-key="api_key"
+            :api-key="public_key"
             :client-id="client_id"
             text="add credit crad"
             submit-text="カードで支払い"
@@ -19,8 +19,8 @@ import axios from 'axios';
 export default{
     data: function() {
         return {
-            api_key: gon.PAYJP_PUBLIC_KEY,
-            client_id: gon.PAYJP_PUBLIC_KEY,
+            public_key: String(gon.payjp_public_key),
+            client_id: String(gon.payjp_client_id)
         }
     },
     components: {
