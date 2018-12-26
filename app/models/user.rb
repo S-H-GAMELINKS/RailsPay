@@ -7,8 +7,10 @@ class User < ApplicationRecord
   def create_customer_id(token)
     Payjp.api_key = ENV['PAYJP_SECRET_KEY']
 
-    Payjp::Customer.create(
+    response = Payjp::Customer.create(
       card: token
     )
+
+    self.update(:customer_id => response.id)
   end
 end
