@@ -10,7 +10,7 @@ class Api::UsersController < ApplicationController
     end
 
     def set_token
-        render json: current_user.update(:token => params[:token])
+        render json: current_user.update(token_params)
     end
 
     def update
@@ -25,6 +25,10 @@ class Api::UsersController < ApplicationController
 
         def set_user
             @user = User.find(params[:id])
+        end
+
+        def token_params
+            params.require(:user).permit(:token)
         end
 
         def user_params
