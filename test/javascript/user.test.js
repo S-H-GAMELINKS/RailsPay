@@ -55,9 +55,4 @@ describe('Users pages', () => {
         });
         expect(wrapper).not.toBeNull();
     });
-
-    it('should render User CheckOut', () => {
-        const wrapper = shallowMount(CheckOut);
-        expect(wrapper).not.toBeNull();
-    })
 });
