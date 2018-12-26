@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   namespace :api, format: 'json' do
     put '/users' => 'users#update'
+    post '/users/set_token' => 'users#set_token'
     get '/users/sessions' => 'users#user_session'
     get '/users/:id' => 'users#show'
   end

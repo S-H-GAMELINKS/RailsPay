@@ -33,8 +33,6 @@ Quill.register("modules/imageResize", ImageResize);
 
 import CheckOut from './CheckOut.vue';
 
-console.log(gon.PAYJP_PUBLIC_KEY)
-
 export default {
     data: function() {
         return {

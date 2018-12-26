@@ -9,6 +9,10 @@ class Api::UsersController < ApplicationController
         render json: @user
     end
 
+    def set_token
+        render json: current_user.update(:token => params[:token])
+    end
+
     def update
         if @user.update(user_params)
             render json: @user

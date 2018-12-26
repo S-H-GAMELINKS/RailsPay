@@ -15,6 +15,7 @@
 <script>
 import PayjpCheckout from 'vue-payjp-checkout';
 import axios from 'axios';
+import $ from 'jquery'
 
 export default{
     data: function() {
@@ -37,7 +38,7 @@ export default{
             axios.defaults.headers['X-CSRF-TOKEN'] = $('meta[name=csrf-token]').attr('content');
             axios.defaults.headers['content-type'] = 'application/json';
 
-            axios.post('/api/users/set_token', {token: token}).then((response) => {
+            axios.post('/api/users/set_token', {user: {token: token}}).then((response) => {
                 console.log(response);
                 alert("Success!");
             }, (error) => {
