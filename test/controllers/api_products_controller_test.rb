@@ -20,4 +20,9 @@ class ApiProductsControllerTest < ActionDispatch::IntegrationTest
         get "/api/products/1/edit"
         assert_response :success
     end
+
+    test "should product update" do
+        put "/api/products/1", params: {product: {name: "test", content: "test", price: "100"}}
+        assert_response :success
+    end
 end
