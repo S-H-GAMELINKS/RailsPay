@@ -4,6 +4,7 @@ import VueRouter from 'vue-router';
 import Index from '../components/web/Index.vue';
 import About from '../components/web/About.vue';
 import Contact from '../components/web/Contact.vue';
+import Payment from '../components/web/Payment.vue';
 
 import MyPages from '../components/user/MyPages.vue';
 import MyPagesEdit from '../components/user/Edit.vue';
@@ -19,6 +20,7 @@ export default new VueRouter({
         { path: '/', component: Index },
         { path: '/about', component: About },
         { path: '/contact', component: Contact },
+        { path: '/payment', component: Payment },
         { path: '/users/mypages', component: MyPages, name: 'mypages'},
         { path: '/users/mypages/edit', component: MyPagesEdit, name: 'mypages_edit'},
         { path: '/users/:id', component: UsersShow, name: 'users_show'},
