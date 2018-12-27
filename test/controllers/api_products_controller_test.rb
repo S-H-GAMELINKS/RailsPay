@@ -30,4 +30,9 @@ class ApiProductsControllerTest < ActionDispatch::IntegrationTest
         put "/api/products/1", params: {product: {name: "test", content: "test", price: "100"}}
         assert_response :success
     end
+
+    test "should product delete" do
+        delete "/api/products/1"
+        assert_response :success
+    end
 end
