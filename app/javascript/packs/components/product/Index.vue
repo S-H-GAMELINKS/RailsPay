@@ -19,9 +19,6 @@ export default {
     data: function() {
         return {
             products: [],
-            pages: 1,
-            pageCount: 0,
-            pagePer: 10,
             user: this.$store.state.user
         }
     },
@@ -33,7 +30,7 @@ export default {
             axios.defaults.headers['X-CSRF-TOKEN'] = $('meta[name=csrf-token]').attr('content');
             axios.defaults.headers['content-type'] = 'application/json';
 
-            this.products.length = 0;
+            this.products = [];
 
             axios.get('/api/products').then((response) => {
                 for(var i = 0; i < response.data.length; i++) {

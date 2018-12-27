@@ -5,13 +5,26 @@ import Create from 'components/product/Create';
 import Edit from 'components/product/Edit';
 
 describe('CRUD Products', () => {
+
+    const $store = {
+        state: {
+            user: {
+                id: 1,
+                session: true
+            }
+        }
+    }
+
     it('should render Index', () => {
-        const wrapper = shallowMount(Index);
+        const wrapper = shallowMount(Index, {
+            mocks: {
+                $store
+            }
+        });
         expect(wrapper).not.toBeNull();
     });
 
     it('should render Show', () => {
-
         const $route = {
             path: '/products/1'
         }
