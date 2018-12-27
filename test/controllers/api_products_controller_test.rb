@@ -10,4 +10,9 @@ class ApiProductsControllerTest < ActionDispatch::IntegrationTest
         get "/api/products/1"
         assert_response :success
     end
+
+    test "should get new" do
+        get "/api/products/new"
+        assert_response :success
+    end
 end
