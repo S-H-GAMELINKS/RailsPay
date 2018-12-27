@@ -6,6 +6,11 @@ import About from '../components/web/About.vue';
 import Contact from '../components/web/Contact.vue';
 import Payment from '../components/web/Payment.vue';
 
+import ProductsIndex from '../components/product/Index.vue';
+import ProductsCreate from '../components/product/Create.vue';
+import ProductsShow from '../components/product/Show.vue';
+import ProductsEdit from '../components/product/Edit.vue';
+
 import MyPages from '../components/user/MyPages.vue';
 import MyPagesEdit from '../components/user/Edit.vue';
 import UsersShow from '../components/user/Show.vue';
@@ -21,6 +26,10 @@ export default new VueRouter({
         { path: '/about', component: About },
         { path: '/contact', component: Contact },
         { path: '/payment', component: Payment },
+        { path: '/products', component: ProductsIndex },
+        { path: '/products/new', component: ProductsCreate },
+        { path: '/products/:id', component: ProductsShow, name: 'products_show'},
+        { path: '/products/:id/edit', component: ProductsEdit, name: 'products_edits'},
         { path: '/users/mypages', component: MyPages, name: 'mypages'},
         { path: '/users/mypages/edit', component: MyPagesEdit, name: 'mypages_edit'},
         { path: '/users/:id', component: UsersShow, name: 'users_show'},

@@ -5,6 +5,11 @@ Rails.application.routes.draw do
   get "/contact", to: "web#index"
   get "/payment", to: "web#index"
 
+  get "/products", to: "web#index"
+  get "/products/:id", to: "web#index"
+  get "/products/:id/edit", to: "web#index"
+  get "/products/new", to: "web#index"
+
   get "/sign_up", to: "web#index"
   get "/sign_in", to: "web#index"
 
@@ -13,6 +18,7 @@ Rails.application.routes.draw do
   get "/users/:id", to: "web#index"
 
   namespace :api, format: 'json' do
+    resources :products
     put '/users' => 'users#update'
     post '/users/set_token' => 'users#set_token'
     get '/users/sessions' => 'users#user_session'

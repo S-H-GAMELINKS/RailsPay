@@ -10,6 +10,7 @@
                     <router-link to="/" class="dropdown-item">Top</router-link>
                     <router-link to="/about" class="dropdown-item">About</router-link>
                     <router-link to="/contact" class="dropdown-item">Contact</router-link>
+                    <router-link to="/products" class="dropdown-item">Product</router-link>
                     <router-link to="/users/mypages" v-if="user.session" class="dropdown-item">Profile</router-link>
                     <router-link to="/payment" v-if="user.session" class="dropdown-item">Payment</router-link>
                     <a href="/users/sign_out" data-method="delete"  v-on:click.native="userSignOut" v-if="user.session" class="dropdown-item">SignOut</a>
