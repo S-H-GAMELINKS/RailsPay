@@ -5,6 +5,11 @@ Rails.application.routes.draw do
   get "/contact", to: "web#index"
   get "/payment", to: "web#index"
 
+  get "/products", to: "web#index"
+  get "/products/:id", to: "web#index"
+  get "/products/:id/edit", to: "web#index"
+  get "/products/new", to: "web#index"
+
   get "/sign_up", to: "web#index"
   get "/sign_in", to: "web#index"
 
