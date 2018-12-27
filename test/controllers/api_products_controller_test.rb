@@ -16,6 +16,11 @@ class ApiProductsControllerTest < ActionDispatch::IntegrationTest
         assert_response :success
     end
 
+    test "should product create" do
+        post "/api/products/1", params: {product: {name: "test", content: "test", price: "100"}}
+        assert_response :success
+    end
+
     test "should get edit" do
         get "/api/products/1/edit"
         assert_response :success
