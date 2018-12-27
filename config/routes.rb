@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get "/users/:id", to: "web#index"
 
   namespace :api, format: 'json' do
+    resources :products
     put '/users' => 'users#update'
     post '/users/set_token' => 'users#set_token'
     get '/users/sessions' => 'users#user_session'
