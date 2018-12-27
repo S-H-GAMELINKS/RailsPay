@@ -20,10 +20,10 @@ export default {
         }
     },
     mounted: function() {
-        this.getPost();
+        this.getProduct();
     },
     methods: {
-        getPost: function() {
+        getProduct: function() {
             const id = String(this.$route.path).replace(/\/products\//, '');
 
             axios.get('/api/products/' + id).then((response) => {
