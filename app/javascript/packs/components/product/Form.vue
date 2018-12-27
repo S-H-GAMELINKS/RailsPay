@@ -2,8 +2,8 @@
     <div class="container">
         <form>
             <div class="form-group">
-                <label>Tittle</label>
-                <input class="form-control" v-model="title" placeholder="Input your post title ......">
+                <label>Name</label>
+                <input class="form-control" v-model="name" placeholder="Input your product title ......">
             </div>
             <div class="form-group">
                 <label>Content</label>
@@ -36,7 +36,7 @@ Quill.register("modules/imageResize", ImageResize);
 export default {
     data: function() {
         return {
-            title: "",
+            name: "",
             content: "",
             price: "",
             editorSettings: {
@@ -71,7 +71,7 @@ export default {
             const id = String(this.$route.path).replace(/\/products\//, '').replace(/\/edit/, '');
 
             axios.get('/api/products/' + id).then((response) => {
-                this.title = response.data.title;
+                this.name = response.data.name;
                 this.content = response.data.content;
                 this.price = String(response.data.price);
             }, (error) => {
@@ -82,29 +82,29 @@ export default {
             axios.defaults.headers['X-CSRF-TOKEN'] = $('meta[name=csrf-token]').attr('content');
             axios.defaults.headers['content-type'] = 'application/json';
 
-            axios.post('/api/products', {product: {title: this.title, content: this.content, price: this.price}}).then((response) => {
+            axios.post('/api/products', {product: {name: this.name, content: this.content, price: this.price}}).then((response) => {
                 if (this.title === "" || this.content === "" || this.price === "") {
                     alert("Can't be black in Title or Content!!");
                 } else {
                     alert("Success!");
-                    this.$router.push({name: 'products_show'});
+                    this.$router.push({path: '/products'});
                 }
             }, (error) => {
                 alert(error);
             })
         },
-        editPost: function() {
+        editProduct: function() {
             axios.defaults.headers['X-CSRF-TOKEN'] = $('meta[name=csrf-token]').attr('content');
             axios.defaults.headers['content-type'] = 'application/json';
             
             const id = String(this.$route.path).replace(/\/products\//, '').replace(/\/edit/, '');
 
-            axios.put('/api/products/' + id, {product: {title: this.title, content: this.content, price: this.price}}).then((response) => {
+            axios.put('/api/products/' + id, {product: {name: this.name, content: this.content, price: this.price}}).then((response) => {
                 if (this.title === "" || this.content === "" || this.price === "") {
                     alert("Can't be black in Title or Content!!");
                 } else {
                     alert("Success!");
-                    this.$router.push({name: 'products_show'});
+                    this.$router.push({path: '/products'});
                 }
             }, (error) => {
                 alert(error);

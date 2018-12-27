@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <p><h1>Title: {{title}} </h1></p>
+        <p><h1>Name: {{name}} </h1></p>
         <p><h2>Price: {{price}}</h2></p>
         <p><h2>Content</h2></p>
         <p v-html="content"></p>
@@ -14,7 +14,7 @@ import $ from 'jquery';
 export default {
     data: function() {
         return {
-            title: "",
+            name: "",
             content: "",
             price: ""
         }
@@ -27,7 +27,7 @@ export default {
             const id = String(this.$route.path).replace(/\/products\//, '');
 
             axios.get('/api/products/' + id).then((response) => {
-                this.title = response.data.title;
+                this.name = response.data.name;
                 this.content = response.data.content;
                 this.price = String(response.data.price);
             }, (error) => {
