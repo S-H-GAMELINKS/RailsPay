@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'web#index'
   get "/about", to: "web#index"
   get "/contact", to: "web#index"
+  get "/payment", to: "web#index"
 
   get "/sign_up", to: "web#index"
   get "/sign_in", to: "web#index"
