@@ -4,14 +4,23 @@ import Show from 'components/product/Show';
 import Create from 'components/product/Create';
 import Edit from 'components/product/Edit';
 
-describe('CRUD Place', () => {
+describe('CRUD Products', () => {
     it('should render Index', () => {
         const wrapper = shallowMount(Index);
         expect(wrapper).not.toBeNull();
     });
 
     it('should render Show', () => {
-        const wrapper = shallowMount(Show);
+
+        const $route = {
+            path: '/products/1'
+        }
+
+        const wrapper = shallowMount(Show, {
+            mocks: {
+                $route
+            }
+        });
         expect(wrapper).not.toBeNull();
     });
 
