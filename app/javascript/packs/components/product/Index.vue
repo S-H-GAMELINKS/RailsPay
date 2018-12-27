@@ -1,12 +1,12 @@
 <template>
     <div>
         <div class="container">
-            <p v-for="(place, key, index) in places" :key=index>
-                <router-link :to="{name: 'places_show', params: {id: place.id}}">{{place.name}}</router-link>
-                <router-link :to="{name: 'places_edits', params: {id: place.id}}" v-if='user.id == place.user_id' >Edit</router-link>
-                <router-link to="/places" v-if='user.id == place.user_id' v-on:click.native="deletePlace(place.id)" >Delete</router-link>
+            <p v-for="(product, key, index) in products" :key=index>
+                <router-link :to="{name: 'products_show', params: {id: product.id}}">{{product.name}}</router-link>
+                <router-link :to="{name: 'products_edits', params: {id: product.id}}">Edit</router-link>
+                <router-link to="/products" v-on:click.native="deleteProduct(product.id)" >Delete</router-link>
             </p>
-            <router-link v-if='user.session' to="/places/new" >New</router-link>
+            <router-link v-if='user.session' to="/products/new" >New</router-link>
         </div>
     </div>
 </template>
@@ -18,7 +18,7 @@ import $ from 'jquery';
 export default {
     data: function() {
         return {
-            places: [],
+            products: [],
             pages: 1,
             pageCount: 0,
             pagePer: 10,
@@ -26,18 +26,18 @@ export default {
         }
     },
     mounted: function() {
-        this.getPlaces();
+        this.getProducts();
     },
     methods: {
-        getPlaces: function() {
+        getProducts: function() {
             axios.defaults.headers['X-CSRF-TOKEN'] = $('meta[name=csrf-token]').attr('content');
             axios.defaults.headers['content-type'] = 'application/json';
 
-            this.places.length = 0;
+            this.products.length = 0;
 
-            axios.get('/api/places').then((response) => {
+            axios.get('/api/products').then((response) => {
                 for(var i = 0; i < response.data.length; i++) {
-                    this.places.push(response.data[i]);
+                    this.products.push(response.data[i]);
                 }
                 console.log(response.data)
                 this.$forceUpdate();
@@ -45,11 +45,12 @@ export default {
                 console.log(error);
             })
         },
-       deletePlace: function(place_id) {
+       deleteProduct: function(product_id) {
             axios.defaults.headers['X-CSRF-TOKEN'] = $('meta[name=csrf-token]').attr('content');
             axios.defaults.headers['content-type'] = 'application/json';
-            axios.delete('/api/places/' + String(place_id)).then((response) => {
-                this.getPlaces();
+
+            axios.delete('/api/products/' + String(product_id)).then((response) => {
+                this.getProducts();
                 this.$forceUpdate();
             }, (error) => {
                 console.log(error);
