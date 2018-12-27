@@ -28,7 +28,7 @@ class Api::ProductsController < ApplicationController
     # POST /api/products
     # POST /api/products.json
     def create
-      @product = product.new(product_params)
+      @product = Product.new(product_params)
       
       if @product.save
         render json: @product
