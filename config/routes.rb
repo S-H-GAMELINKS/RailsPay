@@ -23,6 +23,7 @@ Rails.application.routes.draw do
     post '/users/set_token' => 'users#set_token'
     get '/users/sessions' => 'users#user_session'
     get '/users/:id' => 'users#show'
+    post '/payments' => 'payments#create'
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
