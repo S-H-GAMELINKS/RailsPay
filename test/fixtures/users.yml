@@ -8,3 +8,4 @@ dummy:
   id: 999
   email: "ge999@gmail.com"
   encrypted_password: "999ge999"
+  customer_id: cus_dd0673f6958610d34d884affa158

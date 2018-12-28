@@ -6,8 +6,8 @@ class Api::PaymentsController < ApplicationController
         Payjp.api_key = ENV['PAYJP_SECRET_KEY']
 
         charge = Payjp::Charge.create(
-            :amount => params[:price],
-            :customer => currnt_user.customer_id,
+            :amount => payment_params[:price],
+            :customer => current_user.customer_id,
             :currency => 'jpy',
         )
 
