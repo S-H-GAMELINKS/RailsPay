@@ -33,7 +33,17 @@ export default {
             }
         },
         onDecode: function(decodedString) {
-            const price = decodedString;
+            const price = decodedString.value;
+
+            var result = confirm('支払いますか？');
+
+            if(result) {
+                axios.post('/api/payments', {payment: {price: price}}).then((response) => {
+                    console.log(response);
+                }, (error) => {
+                    console.log(error);
+                })
+            }
             console.log(decodedString);
         }
     }
