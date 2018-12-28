@@ -33,7 +33,7 @@ export default {
             }
         },
         onDecode: function(decodedString) {
-            const price = decodedString.value;
+            const price = decodedString;
 
             var result = confirm('支払いますか？');
 
